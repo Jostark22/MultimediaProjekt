@@ -3,7 +3,7 @@ from scipy.io.wavfile import write
 import wave
 import numpy as np
 import sys
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 duration=10
 fs=44100
 
@@ -11,9 +11,9 @@ fs=44100
 print("aufnahme läuft")
 aufnahme_1=sounddevice.rec(int(duration * fs),samplerate=fs,channels=1)
 sounddevice.wait()
-write("output1_ch2.wav",fs,aufnahme_1)
+write("output2_ch2.wav",fs,aufnahme_1)
 
-"""For subploting the form"""
+"""For subploting the form""
 wav=wave.open("output1_ch1.wav","r")
 raw = wav.readframes(-1)
 raw=np.frombuffer(raw,"Int16")
@@ -27,7 +27,7 @@ Time=np.linspace(0,len(raw)/sampleRate,num=len(raw))
 plt.title("Subploting the form of the Mono signal")
 plt.plot(Time,raw,color="blue")
 plt.ylabel("Amplitude")
-plt.show()
+plt.show() """
 
 """Optimization"""
 
